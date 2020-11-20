@@ -1,0 +1,26 @@
+server:
+  port: 7779
+  servlet:
+    context-path: /wd
+
+spring:
+  profiles:
+    active: dev
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  typeAliasesPackage: com.example.demo.module.*.entity
+  typeEnumsPackage: com.example.demo.module.*.enums
+  global-config:
+    db-config:
+      id-type: AUTO
+      field-strategy: NOT_NULL
+      column-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
